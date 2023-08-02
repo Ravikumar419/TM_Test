@@ -41,7 +41,7 @@ public void TakeScreenshots(String TCName,String fileName) throws IOException {
 		
 		File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String TimeStamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
-		FileUtils.copyFile(file,new File("./ScreenShots\\"+TCName+fileName+TimeStamp+".jpg"));
+		FileUtils.copyFile(file,new File("./ScreenShots\\"+TCName+"_"+fileName+"_"+TimeStamp+".jpg"));
 	}
 	
 	@Then ("I want to verify Request type Get with Endpoint as List Users")
@@ -173,6 +173,10 @@ public void TakeScreenshots(String TCName,String fileName) throws IOException {
 		HP = new HomePage(driver);
 		HP.Verify_btn_Upgrade();
 		TakeScreenshots("TC1", "upgrade");
+	}
+	@Then("I want to close the browser")
+	public void i_want_to_close_the_browser() {
+	   driver.close();
 	}
 
 
