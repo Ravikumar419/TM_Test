@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Aug 02 12:45:42 MYT 2023</td>
+<td>Started on:</td><td>Sat Aug 12 21:35:01 MYT 2023</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (6 ms)</td>
+<tr><td>Total time:</td><td>20 seconds (20173 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,5 +67,133 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.testngRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.testngRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Request Types and Endpoints Listing", "Optional[UI Spec]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.getText(Unknown Source)
+	at pageObjects.HomePage.Verify_GetListUsers(HomePage.java:95)
+	at stepDefinitions.Steps.Verify_Get_ListUsrers(Steps.java:53)
+	at ✽.I want to verify Request type Get with Endpoint as List Users(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:24)
+</pre></div><a href='#' onClick='toggleBox("stack-trace284034271", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace284034271'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.getText(Unknown Source)
+	at pageObjects.HomePage.Verify_GetListUsers(HomePage.java:95)
+	at stepDefinitions.Steps.Verify_Get_ListUsrers(Steps.java:53)
+	at ✽.I want to verify Request type Get with Endpoint as List Users(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:24)
+</pre></div></td>
+<td>3</td>
+<td>testRunner.testngRunner@c8c12ac</td></tr>
+<tr>
+<td title='testRunner.testngRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.testngRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Options for One-time & Monthly Support", "Optional[UI Spec]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pageObjects.HomePage.Click_btn_SupportReqres(HomePage.java:199)
+	at stepDefinitions.Steps.i_click_on_support_req_res_button_to_navigate_to_support_page(Steps.java:149)
+	at ✽.I Click on Support ReqRes button to navigate to support page(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1278196189", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1278196189'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pageObjects.HomePage.Click_btn_SupportReqres(HomePage.java:199)
+	at stepDefinitions.Steps.i_click_on_support_req_res_button_to_navigate_to_support_page(Steps.java:149)
+	at ✽.I Click on Support ReqRes button to navigate to support page(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:58)
+</pre></div></td>
+<td>3</td>
+<td>testRunner.testngRunner@c8c12ac</td></tr>
+<tr>
+<td title='testRunner.testngRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.testngRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Navigation to Support Page", "Optional[UI Spec]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_btn_SupportReqres(HomePage.java:193)
+	at stepDefinitions.Steps.i_want_to_verify_button_to_navigate_to_support_page_is_displayed(Steps.java:143)
+	at ✽.I want to verify button to navigate to support page is displayed(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:48)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1329938019", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1329938019'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_btn_SupportReqres(HomePage.java:193)
+	at stepDefinitions.Steps.i_want_to_verify_button_to_navigate_to_support_page_is_displayed(Steps.java:143)
+	at ✽.I want to verify button to navigate to support page is displayed(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:48)
+</pre></div></td>
+<td>3</td>
+<td>testRunner.testngRunner@c8c12ac</td></tr>
+<tr>
+<td title='testRunner.testngRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.testngRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Upgrade Details on Support Page", "Optional[UI Spec]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_lbl_OnetimePayment(HomePage.java:204)
+	at stepDefinitions.Steps.i_am_able_to_see_one_time_payment_option(Steps.java:162)
+	at ✽.I am able to see One Time Payment option(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:65)
+</pre></div><a href='#' onClick='toggleBox("stack-trace720638621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace720638621'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_lbl_OnetimePayment(HomePage.java:204)
+	at stepDefinitions.Steps.i_am_able_to_see_one_time_payment_option(Steps.java:162)
+	at ✽.I am able to see One Time Payment option(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:65)
+</pre></div></td>
+<td>3</td>
+<td>testRunner.testngRunner@c8c12ac</td></tr>
+<tr>
+<td title='testRunner.testngRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.testngRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Should contain a button to navigate to support page", "Optional[UI Spec]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pageObjects.HomePage.Click_btn_SupportReqres(HomePage.java:199)
+	at stepDefinitions.Steps.i_click_on_support_req_res_button_to_navigate_to_support_page(Steps.java:149)
+	at ✽.I Click on Support ReqRes button to navigate to support page(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:53)
+</pre></div><a href='#' onClick='toggleBox("stack-trace239824711", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace239824711'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pageObjects.HomePage.Click_btn_SupportReqres(HomePage.java:199)
+	at stepDefinitions.Steps.i_click_on_support_req_res_button_to_navigate_to_support_page(Steps.java:149)
+	at ✽.I Click on Support ReqRes button to navigate to support page(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:53)
+</pre></div></td>
+<td>3</td>
+<td>testRunner.testngRunner@c8c12ac</td></tr>
+<tr>
+<td title='testRunner.testngRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.testngRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Display of 'Sample Request and Response' Details", "Optional[UI Spec]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_GetSingleUser(HomePage.java:104)
+	at stepDefinitions.Steps.i_want_to_select_or_click_get_single_user_not_found(Steps.java:131)
+	at ✽.I want to Select or Click “GET SINGLE USER NOT FOUND”(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:42)
+</pre></div><a href='#' onClick='toggleBox("stack-trace603401608", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace603401608'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_GetSingleUser(HomePage.java:104)
+	at stepDefinitions.Steps.i_want_to_select_or_click_get_single_user_not_found(Steps.java:131)
+	at ✽.I want to Select or Click “GET SINGLE USER NOT FOUND”(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:42)
+</pre></div></td>
+<td>3</td>
+<td>testRunner.testngRunner@c8c12ac</td></tr>
+</table><p>
 </body>
 </html>

@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Cucumber_Test_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Cucumber Test Suite</span>
+              <span class="suite-name border-failed">Cucumber Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Cucumber_Test_Suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,46 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">6 methods, 6 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Cucumber_Test_Suite" class="hide-methods failed suite-Cucumber_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-Cucumber_Test_Suite -->
+                      <a href="#" panel-name="suite-Cucumber_Test_Suite" class="show-methods failed suite-Cucumber_Test_Suite"> (show)</a> <!-- show-methods failed suite-Cucumber_Test_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Cucumber_Test_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Test_Suite" title="testRunner.testngRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify Request Types and Endpoints Listing&quot;, &quot;Optional[UI Spec]&quot;)">runScenario("Verify Request Types and Endpoints Listing", "Optional[UI Spec]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Test_Suite" title="testRunner.testngRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify Options for One-time &amp; Monthly Support&quot;, &quot;Optional[UI Spec]&quot;)">runScenario("Verify Options for One-time & Monthly Support", "Optional[UI Spec]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Test_Suite" title="testRunner.testngRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify Navigation to Support Page&quot;, &quot;Optional[UI Spec]&quot;)">runScenario("Verify Navigation to Support Page", "Optional[UI Spec]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Test_Suite" title="testRunner.testngRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify Upgrade Details on Support Page&quot;, &quot;Optional[UI Spec]&quot;)">runScenario("Verify Upgrade Details on Support Page", "Optional[UI Spec]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Test_Suite" title="testRunner.testngRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Should contain a button to navigate to support page&quot;, &quot;Optional[UI Spec]&quot;)">runScenario("Should contain a button to navigate to support page", "Optional[UI Spec]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Cucumber_Test_Suite" title="testRunner.testngRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Verify Display of &#039;Sample Request and Response&#039; Details&quot;, &quot;Optional[UI Spec]&quot;)">runScenario("Verify Display of 'Sample Request and Response' Details", "Optional[UI Spec]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Cucumber_Test_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -105,6 +144,128 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Cucumber_Test_Suite" class="panel Cucumber_Test_Suite">
+          <div class="suite-Cucumber_Test_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testRunner.testngRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify Request Types and Endpoints Listing&quot;, &quot;Optional[UI Spec]&quot;)">
+                  </a> <!-- runScenario("Verify Request Types and Endpoints Listing", "Optional[UI Spec]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify Request Types and Endpoints Listing", "Optional[UI Spec]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.getText(Unknown Source)
+	at pageObjects.HomePage.Verify_GetListUsers(HomePage.java:95)
+	at stepDefinitions.Steps.Verify_Get_ListUsrers(Steps.java:53)
+	at ✽.I want to verify Request type Get with Endpoint as List Users(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:24)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify Options for One-time &amp; Monthly Support&quot;, &quot;Optional[UI Spec]&quot;)">
+                  </a> <!-- runScenario("Verify Options for One-time & Monthly Support", "Optional[UI Spec]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify Options for One-time & Monthly Support", "Optional[UI Spec]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pageObjects.HomePage.Click_btn_SupportReqres(HomePage.java:199)
+	at stepDefinitions.Steps.i_click_on_support_req_res_button_to_navigate_to_support_page(Steps.java:149)
+	at ✽.I Click on Support ReqRes button to navigate to support page(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:58)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify Navigation to Support Page&quot;, &quot;Optional[UI Spec]&quot;)">
+                  </a> <!-- runScenario("Verify Navigation to Support Page", "Optional[UI Spec]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify Navigation to Support Page", "Optional[UI Spec]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_btn_SupportReqres(HomePage.java:193)
+	at stepDefinitions.Steps.i_want_to_verify_button_to_navigate_to_support_page_is_displayed(Steps.java:143)
+	at ✽.I want to verify button to navigate to support page is displayed(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:48)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify Upgrade Details on Support Page&quot;, &quot;Optional[UI Spec]&quot;)">
+                  </a> <!-- runScenario("Verify Upgrade Details on Support Page", "Optional[UI Spec]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify Upgrade Details on Support Page", "Optional[UI Spec]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_lbl_OnetimePayment(HomePage.java:204)
+	at stepDefinitions.Steps.i_am_able_to_see_one_time_payment_option(Steps.java:162)
+	at ✽.I am able to see One Time Payment option(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:65)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Should contain a button to navigate to support page&quot;, &quot;Optional[UI Spec]&quot;)">
+                  </a> <!-- runScenario("Should contain a button to navigate to support page", "Optional[UI Spec]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Should contain a button to navigate to support page", "Optional[UI Spec]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pageObjects.HomePage.Click_btn_SupportReqres(HomePage.java:199)
+	at stepDefinitions.Steps.i_click_on_support_req_res_button_to_navigate_to_support_page(Steps.java:149)
+	at ✽.I Click on Support ReqRes button to navigate to support page(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:53)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Verify Display of &#039;Sample Request and Response&#039; Details&quot;, &quot;Optional[UI Spec]&quot;)">
+                  </a> <!-- runScenario("Verify Display of 'Sample Request and Response' Details", "Optional[UI Spec]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Verify Display of 'Sample Request and Response' Details", "Optional[UI Spec]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)&quot; because &quot;this.searchContext&quot; is null
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.isDisplayed(Unknown Source)
+	at pageObjects.HomePage.Verify_GetSingleUser(HomePage.java:104)
+	at stepDefinitions.Steps.i_want_to_select_or_click_get_single_user_not_found(Steps.java:131)
+	at ✽.I want to Select or Click “GET SINGLE USER NOT FOUND”(file:///C:/Users/gunna/Downloads/TM_Automation_Demo/./Features/TestCases.feature:42)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Cucumber_Test_Suite-class-failed -->
         </div> <!-- panel Cucumber_Test_Suite -->
         <div panel-name="test-xml-Cucumber_Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -117,7 +278,7 @@
 &lt;suite name=&quot;Cucumber Test Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Cucumber Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;API.CreateUser&quot;/&gt;
+      &lt;class name=&quot;testRunner.testngRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Cucumber Test --&gt;
 &lt;/suite&gt; &lt;!-- Cucumber Test Suite --&gt;
@@ -141,6 +302,14 @@
             <span class="header-content">Groups for Cucumber Test Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">cucumber</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">runScenario</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Cucumber_Test_Suite" class="panel">
@@ -157,12 +326,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(6);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'runScenario')
+data.setCell(0, 2, 'testRunner.testngRunner')
+data.setCell(0, 3, 3718);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'testRunner.testngRunner')
+data.setCell(1, 3, 3299);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'runScenario')
+data.setCell(2, 2, 'testRunner.testngRunner')
+data.setCell(2, 3, 3236);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'testRunner.testngRunner')
+data.setCell(3, 3, 3212);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'runScenario')
+data.setCell(4, 2, 'testRunner.testngRunner')
+data.setCell(4, 3, 3166);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'runScenario')
+data.setCell(5, 2, 'testRunner.testngRunner')
+data.setCell(5, 3, 3073);
 window.suiteTableData['Cucumber_Test_Suite']= { tableData: data, tableDiv: 'times-div-Cucumber_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-Cucumber_Test_Suite">
               </div> <!-- times-div-Cucumber_Test_Suite -->
             </div> <!-- times-div -->
@@ -187,6 +380,52 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">testRunner.testngRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@644ded04)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Verify Request Types and Endpoints Listing", "Optional[UI Spec]")</span>
+                <span class="method-start">390 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Verify Display of 'Sample Request and Response' Details", "Optional[UI Spec]")</span>
+                <span class="method-start">4110 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Verify Navigation to Support Page", "Optional[UI Spec]")</span>
+                <span class="method-start">7412 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Should contain a button to navigate to support page", "Optional[UI Spec]")</span>
+                <span class="method-start">10579 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Verify Options for One-time & Monthly Support", "Optional[UI Spec]")</span>
+                <span class="method-start">13793 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Verify Upgrade Details on Support Page", "Optional[UI Spec]")</span>
+                <span class="method-start">17030 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">20106 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

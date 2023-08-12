@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 //Author: rpendyala19@gmail.com
 
@@ -94,146 +95,104 @@ WebDriver driver;
 		String GetLSData=Get_ListUsers.getText();
 		System.out.println(GetLSData);
 		boolean Display_Get_ListUsers = Get_ListUsers.isDisplayed();
-		if (Display_Get_ListUsers) {
-			 System.out.println("Get_ListUsers is displayed.");
-		}else {
-			System.out.println("Get_ListUsers is not displayed.");
-		}
+		Assert.assertTrue(Display_Get_ListUsers,"Get_ListUsers is not displayed.");
+		System.out.println("Get_ListUsers is displayed.");
+		
 	}
 	
 	public void Verify_GetSingleUser() {
 		boolean Display_Get_SingleUser = Get_SingleUser.isDisplayed();
-		if (Display_Get_SingleUser) {
-			 System.out.println("Get_SingleUser is displayed.");
-		}else {
-			System.out.println("Get_SingleUser is not displayed.");
-		}
+		Assert.assertTrue(Display_Get_SingleUser, "Display Get Single User is not displayed");
+		 System.out.println("Display Get Single User is displayed.");
 	}
 	
 	public void Verify_SingleUserNotFound() {
 		boolean Display = SingleUserNotFound.isDisplayed();
-		if (Display) {
-			 System.out.println("SingleUserNotFound is displayed.");
-		}else {
-			System.out.println("SingleUserNotFound is not displayed.");
-		}
+		Assert.assertTrue(Display,"SingleUserNotFound is not displayed.");
+		System.out.println("SingleUserNotFound is displayed.");
+		
 	}
 	
 	public void Verify_GetListResource() {
 		boolean Display = ListResource.isDisplayed();
-		if (Display) {
-			 System.out.println("ListResource is displayed.");
-		}else {
-			System.out.println("ListResource is not displayed.");
-		}
+		Assert.assertTrue(Display,"ListResource is not displayed.");
+		System.out.println("ListResource is displayed.");
+
 	}
 	
 	public void Verify_PostCreate() {
 		boolean Display = PostCreate.isDisplayed();
-		if (Display) {
-			 System.out.println("PostCreate is displayed.");
-		}else {
-			System.out.println("PostCreate is not displayed.");
-		}
+		Assert.assertTrue(Display,"PostCreate is not displayed.");
+		System.out.println("PostCreate is displayed.");
 	}
 	
 	public void Verify_PatchUpdate() {
 		boolean Display = PatchUpdate.isDisplayed();
-		if (Display) {
-			 System.out.println("PatchUpdate is displayed.");
-		}else {
-			System.out.println("PatchUpdate is not displayed.");
-		}
+		Assert.assertTrue(Display,"PatchUpdate is not displayed.");
+		System.out.println("PatchUpdate is displayed.");
 	}
 	
 	public void Verify_PutUpdate() {
 		boolean Display = PutUpdate.isDisplayed();
-		if (Display) {
-			 System.out.println("PutUpdate is displayed.");
-		}else {
-			System.out.println("PutUpdate is not displayed.");
-		}
+		Assert.assertTrue(Display,"PutUpdate is not displayed.");
+		System.out.println("PutUpdate is displayed.");
+
 	}
 	
 	public void Verify_Delete() {
 		boolean Display = Delete.isDisplayed();
-		if (Display) {
-			 System.out.println("Delete is displayed.");
-		}else {
-			System.out.println("Delete is not displayed.");
-		}
+		Assert.assertTrue(Display,"Delete is not displayed.");
+		System.out.println("Delete is displayed.");
 	}
 	
 	public void Verify_RegisterSuccessful() {
 		boolean Display = RegisterSuccessful.isDisplayed();
-		if (Display) {
-			 System.out.println("RegisterSuccessful is displayed.");
-		}else {
-			System.out.println("RegisterSuccessful is not displayed.");
-		}
+		Assert.assertTrue(Display,"RegisterSuccessful is not displayed.");
+		System.out.println("RegisterSuccessful is displayed.");
 	}
 	
 	public void Verify_RegisterUnuccessful() {
 		boolean Display = RegisterUnuccessful.isDisplayed();
-		if (Display) {
-			 System.out.println("RegisterUnuccessful is displayed.");
-		}else {
-			System.out.println("RegisterUnuccessful is not displayed.");
-		}
+		Assert.assertTrue(Display,"RegisterUnuccessful is not displayed.");
+		System.out.println("RegisterUnuccessful is displayed.");
 	}
 	
 	public void Verify_LoginSuccessful() {
 		boolean Display = LoginSuccessful.isDisplayed();
-		if (Display) {
-			 System.out.println("LoginSuccessful is displayed.");
-		}else {
-			System.out.println("LoginSuccessful is not displayed.");
-		}
+		Assert.assertTrue(Display,"LoginSuccessful is not displayed.");
+		System.out.println("LoginSuccessful is displayed.");
+
 	}
 	
 	public void Verify_LoginUnsuccessful() {
 		boolean Display = LoginUnsuccessful.isDisplayed();
-		if (Display) {
-			 System.out.println("LoginUnsuccessful is displayed.");
-		}else {
-			System.out.println("LoginUnsuccessful is not displayed.");
-		}
+		Assert.assertTrue(Display,"LoginUnsuccessful is not displayed.");
+		System.out.println("LoginUnsuccessful is displayed.");
+	
 	}
 	
 	public void Verify_DelayRespnse() {
 		boolean Display = DelayRespnse.isDisplayed();
-		if (Display) {
-			 System.out.println("DelayRespnse is displayed.");
-		}else {
-			System.out.println("DelayRespnse is not displayed.");
-		}
+		Assert.assertTrue(Display,"DelayRespnse is not displayed.");
+		System.out.println("DelayRespnse is displayed.");
+
 	}
 	
 	public void Verify_Request() {
 		boolean Display = Request.isDisplayed();
-		if (Display) {
-			 System.out.println("Request is displayed.");
-		}else {
-			System.out.println("Request is not displayed.");
-		}
+		Assert.assertTrue(Display,"Request is not displayed.");
+		System.out.println("Request is displayed.");
 	}
 	
 	public void Verify_Response() {
 		boolean Display = Response.isDisplayed();
-		if (Display) {
-			 System.out.println("Response is displayed.");
-		}else {
-			System.out.println("Response is not displayed.");
-		}
+		Assert.assertTrue(Display,"Response is displayed");
 	}
 	
 	public void Verify_btn_SupportReqres() {
 		boolean Display = btn_SupportReqres.isDisplayed();
-		if (Display) {
-			 System.out.println("btn_SupportReqres is displayed.");
-		}else {
-			System.out.println("btn_SupportReqres is not displayed.");
-		}
+		Assert.assertTrue(Display,"btn_SupportReqres is not displayed.");
+		System.out.println("btn_SupportReqres is displayed.");
 	}
 	
 	public void Click_btn_SupportReqres() {
@@ -243,29 +202,22 @@ WebDriver driver;
 	
 	public void Verify_lbl_OnetimePayment() {
 		boolean Display = lbl_OnetimePayment.isDisplayed();
-		if (Display) {
-			 System.out.println("lbl_OnetimePayment is displayed.");
-		}else {
-			System.out.println("lbl_OnetimePayment is not displayed.");
-		}
+		Assert.assertTrue(Display,"lbl_OnetimePayment is not displayed.");
+		System.out.println("lbl_OnetimePayment is displayed.");
+
 	}
 	
 	public void Verify_lbl_MonthlySupport() {
 		boolean Display = lbl_MonthlySupport.isDisplayed();
-		if (Display) {
-			 System.out.println("lbl_MonthlySupport is displayed.");
-		}else {
-			System.out.println("lbl_MonthlySupport is not displayed.");
-		}
+		Assert.assertTrue(Display,"lbl_MonthlySupport is not displayed.");
+		System.out.println("lbl_MonthlySupport is displayed.");
 	}
 	
 	public void Verify_btn_Upgrade() {
 		boolean Display = btn_Upgrade.isDisplayed();
-		if (Display) {
-			 System.out.println("btn_Upgrade is displayed.");
-		}else {
-			System.out.println("btn_Upgrade is not displayed.");
-		}
+		Assert.assertTrue(Display,"btn_Upgrade is not displayed.");
+		System.out.println("btn_Upgrade is displayed.");
+
 	}
 	
 }

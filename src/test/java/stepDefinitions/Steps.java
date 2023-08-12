@@ -15,7 +15,7 @@ import pageObjects.HomePage;
 
 
 //Author: rpendyala19@gmail.com
-public class Steps extends testBase{
+public class Steps {
 	public WebDriver driver;
 	public HomePage HP;
 //	@Test
@@ -34,7 +34,8 @@ public class Steps extends testBase{
 		// Launch Website
 		driver.get(url);
 		TakeScreenshots("TC1", "url");
-		
+		 String actualTitle = driver.getTitle();
+		 System.out.println(actualTitle);
 	}
 	
 public void TakeScreenshots(String TCName,String fileName) throws IOException {
@@ -47,7 +48,7 @@ public void TakeScreenshots(String TCName,String fileName) throws IOException {
 	@Then ("I want to verify Request type Get with Endpoint as List Users")
 	public void Verify_Get_ListUsrers()
 	{	
-		threadSleep(2);
+//		threadSleep(2);
 		HomePage HP = new HomePage(driver);
 		HP.Verify_GetListUsers();
 	}

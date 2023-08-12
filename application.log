@@ -1,0 +1,131 @@
+2023-08-12 21:47:22,222 DEBUG [main] RequestAddCookies:123 - CookieSpec selected: default
+2023-08-12 21:47:22,234 DEBUG [main] RequestAuthCache:77 - Auth cache not set in the context
+2023-08-12 21:47:22,235 DEBUG [main] PoolingHttpClientConnectionManager:267 - Connection request: [route: {s}->https://reqres.in:443][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2023-08-12 21:47:22,244 DEBUG [main] PoolingHttpClientConnectionManager:312 - Connection leased: [id: 0][route: {s}->https://reqres.in:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2023-08-12 21:47:22,245 DEBUG [main] MainClientExec:234 - Opening connection {s}->https://reqres.in:443
+2023-08-12 21:47:22,274 DEBUG [main] DefaultHttpClientConnectionOperator:139 - Connecting to reqres.in/172.67.73.173:443
+2023-08-12 21:47:22,274 DEBUG [main] SSLConnectionSocketFactory:366 - Connecting socket to reqres.in/172.67.73.173:443 with timeout 0
+2023-08-12 21:47:22,308 DEBUG [main] SSLConnectionSocketFactory:430 - Enabled protocols: [TLSv1.3, TLSv1.2]
+2023-08-12 21:47:22,308 DEBUG [main] SSLConnectionSocketFactory:431 - Enabled cipher suites:[TLS_AES_256_GCM_SHA384, TLS_AES_128_GCM_SHA256, TLS_CHACHA20_POLY1305_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256, TLS_DHE_DSS_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_DSS_WITH_AES_256_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_DSS_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA, TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_GCM_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2023-08-12 21:47:22,308 DEBUG [main] SSLConnectionSocketFactory:435 - Starting handshake
+2023-08-12 21:47:22,389 DEBUG [main] SSLConnectionSocketFactory:465 - Secure session established
+2023-08-12 21:47:22,389 DEBUG [main] SSLConnectionSocketFactory:466 -  negotiated protocol: TLSv1.3
+2023-08-12 21:47:22,389 DEBUG [main] SSLConnectionSocketFactory:467 -  negotiated cipher suite: TLS_AES_256_GCM_SHA384
+2023-08-12 21:47:22,389 DEBUG [main] SSLConnectionSocketFactory:475 -  peer principal: CN=sni.cloudflaressl.com, O="Cloudflare, Inc.", L=San Francisco, ST=California, C=US
+2023-08-12 21:47:22,390 DEBUG [main] SSLConnectionSocketFactory:484 -  peer alternative names: [reqres.in, *.reqres.in, sni.cloudflaressl.com]
+2023-08-12 21:47:22,390 DEBUG [main] SSLConnectionSocketFactory:488 -  issuer principal: CN=Cloudflare Inc ECC CA-3, O="Cloudflare, Inc.", C=US
+2023-08-12 21:47:22,394 DEBUG [main] DefaultHttpClientConnectionOperator:146 - Connection established 192.168.101.60:51162<->172.67.73.173:443
+2023-08-12 21:47:22,394 DEBUG [main] MainClientExec:255 - Executing request POST /api/users HTTP/1.1
+2023-08-12 21:47:22,394 DEBUG [main] MainClientExec:260 - Target auth state: UNCHALLENGED
+2023-08-12 21:47:22,395 DEBUG [main] MainClientExec:266 - Proxy auth state: UNCHALLENGED
+2023-08-12 21:47:22,396 DEBUG [main] headers:133 - http-outgoing-0 >> POST /api/users HTTP/1.1
+2023-08-12 21:47:22,396 DEBUG [main] headers:136 - http-outgoing-0 >> Content-Type: application/json
+2023-08-12 21:47:22,396 DEBUG [main] headers:136 - http-outgoing-0 >> Content-Length: 34
+2023-08-12 21:47:22,396 DEBUG [main] headers:136 - http-outgoing-0 >> Host: reqres.in
+2023-08-12 21:47:22,396 DEBUG [main] headers:136 - http-outgoing-0 >> Connection: Keep-Alive
+2023-08-12 21:47:22,396 DEBUG [main] headers:136 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+2023-08-12 21:47:22,396 DEBUG [main] headers:136 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2023-08-12 21:47:22,397 DEBUG [main] wire:73 - http-outgoing-0 >> "POST /api/users HTTP/1.1[\r][\n]"
+2023-08-12 21:47:22,397 DEBUG [main] wire:73 - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+2023-08-12 21:47:22,397 DEBUG [main] wire:73 - http-outgoing-0 >> "Content-Length: 34[\r][\n]"
+2023-08-12 21:47:22,397 DEBUG [main] wire:73 - http-outgoing-0 >> "Host: reqres.in[\r][\n]"
+2023-08-12 21:47:22,397 DEBUG [main] wire:73 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2023-08-12 21:47:22,397 DEBUG [main] wire:73 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)[\r][\n]"
+2023-08-12 21:47:22,398 DEBUG [main] wire:73 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2023-08-12 21:47:22,398 DEBUG [main] wire:73 - http-outgoing-0 >> "[\r][\n]"
+2023-08-12 21:47:22,398 DEBUG [main] wire:87 - http-outgoing-0 >> "{"name":"morpheus","job":"leader"}"
+2023-08-12 21:47:22,813 DEBUG [main] wire:73 - http-outgoing-0 << "HTTP/1.1 201 Created[\r][\n]"
+2023-08-12 21:47:22,813 DEBUG [main] wire:73 - http-outgoing-0 << "Date: Sat, 12 Aug 2023 13:47:23 GMT[\r][\n]"
+2023-08-12 21:47:22,813 DEBUG [main] wire:73 - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
+2023-08-12 21:47:22,813 DEBUG [main] wire:73 - http-outgoing-0 << "Content-Length: 84[\r][\n]"
+2023-08-12 21:47:22,813 DEBUG [main] wire:73 - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "Etag: W/"54-tnSTg/2edJemGuQgwOwQv4ZHBBU"[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "Via: 1.1 vegur[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "CF-Cache-Status: DYNAMIC[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=2xPMWpyVYoPP7avMz0FPQXKx0vopy4vbhriQ%2BA2t3rKclk%2FBCo%2BhDpw0d4ZzVjctasu5PbMBo9jawhDSjw6ynCfVQkF0yZMh3xUK34tcX4T2TBRFL%2BdrxugKog%3D%3D"}],"group":"cf-nel","max_age":604800}[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "Server: cloudflare[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "CF-RAY: 7f592b7e4f0c13e0-KUL[\r][\n]"
+2023-08-12 21:47:22,814 DEBUG [main] wire:73 - http-outgoing-0 << "[\r][\n]"
+2023-08-12 21:47:22,815 DEBUG [main] wire:87 - http-outgoing-0 << "{"name":"morpheus","job":"leader","id":"581","createdAt":"2023-08-12T13:47:23.549Z"}"
+2023-08-12 21:47:22,816 DEBUG [main] headers:122 - http-outgoing-0 << HTTP/1.1 201 Created
+2023-08-12 21:47:22,816 DEBUG [main] headers:125 - http-outgoing-0 << Date: Sat, 12 Aug 2023 13:47:23 GMT
+2023-08-12 21:47:22,816 DEBUG [main] headers:125 - http-outgoing-0 << Content-Type: application/json; charset=utf-8
+2023-08-12 21:47:22,816 DEBUG [main] headers:125 - http-outgoing-0 << Content-Length: 84
+2023-08-12 21:47:22,816 DEBUG [main] headers:125 - http-outgoing-0 << Connection: keep-alive
+2023-08-12 21:47:22,817 DEBUG [main] headers:125 - http-outgoing-0 << X-Powered-By: Express
+2023-08-12 21:47:22,817 DEBUG [main] headers:125 - http-outgoing-0 << Access-Control-Allow-Origin: *
+2023-08-12 21:47:22,817 DEBUG [main] headers:125 - http-outgoing-0 << Etag: W/"54-tnSTg/2edJemGuQgwOwQv4ZHBBU"
+2023-08-12 21:47:22,817 DEBUG [main] headers:125 - http-outgoing-0 << Via: 1.1 vegur
+2023-08-12 21:47:22,817 DEBUG [main] headers:125 - http-outgoing-0 << CF-Cache-Status: DYNAMIC
+2023-08-12 21:47:22,817 DEBUG [main] headers:125 - http-outgoing-0 << Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=2xPMWpyVYoPP7avMz0FPQXKx0vopy4vbhriQ%2BA2t3rKclk%2FBCo%2BhDpw0d4ZzVjctasu5PbMBo9jawhDSjw6ynCfVQkF0yZMh3xUK34tcX4T2TBRFL%2BdrxugKog%3D%3D"}],"group":"cf-nel","max_age":604800}
+2023-08-12 21:47:22,817 DEBUG [main] headers:125 - http-outgoing-0 << NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+2023-08-12 21:47:22,818 DEBUG [main] headers:125 - http-outgoing-0 << Server: cloudflare
+2023-08-12 21:47:22,818 DEBUG [main] headers:125 - http-outgoing-0 << CF-RAY: 7f592b7e4f0c13e0-KUL
+2023-08-12 21:47:22,820 DEBUG [main] MainClientExec:285 - Connection can be kept alive indefinitely
+2023-08-12 21:47:22,822 DEBUG [main] PoolingHttpClientConnectionManager:344 - Connection [id: 0][route: {s}->https://reqres.in:443] can be kept alive indefinitely
+2023-08-12 21:47:22,822 DEBUG [main] DefaultManagedHttpClientConnection:88 - http-outgoing-0: set socket timeout to 0
+2023-08-12 21:47:22,823 DEBUG [main] PoolingHttpClientConnectionManager:351 - Connection released: [id: 0][route: {s}->https://reqres.in:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2023-08-12 21:47:22,824 DEBUG [main] RequestAddCookies:123 - CookieSpec selected: default
+2023-08-12 21:47:22,824 DEBUG [main] RequestAuthCache:77 - Auth cache not set in the context
+2023-08-12 21:47:22,824 DEBUG [main] PoolingHttpClientConnectionManager:267 - Connection request: [route: {s}->https://reqres.in:443][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2023-08-12 21:47:22,824 DEBUG [main] PoolingHttpClientConnectionManager:312 - Connection leased: [id: 0][route: {s}->https://reqres.in:443][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2023-08-12 21:47:22,824 DEBUG [main] DefaultManagedHttpClientConnection:88 - http-outgoing-0: set socket timeout to 0
+2023-08-12 21:47:22,824 DEBUG [main] MainClientExec:255 - Executing request GET /api/users/581 HTTP/1.1
+2023-08-12 21:47:22,825 DEBUG [main] MainClientExec:260 - Target auth state: UNCHALLENGED
+2023-08-12 21:47:22,825 DEBUG [main] MainClientExec:266 - Proxy auth state: UNCHALLENGED
+2023-08-12 21:47:22,825 DEBUG [main] headers:133 - http-outgoing-0 >> GET /api/users/581 HTTP/1.1
+2023-08-12 21:47:22,825 DEBUG [main] headers:136 - http-outgoing-0 >> Content-Type: application/json
+2023-08-12 21:47:22,825 DEBUG [main] headers:136 - http-outgoing-0 >> Host: reqres.in
+2023-08-12 21:47:22,825 DEBUG [main] headers:136 - http-outgoing-0 >> Connection: Keep-Alive
+2023-08-12 21:47:22,825 DEBUG [main] headers:136 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+2023-08-12 21:47:22,825 DEBUG [main] headers:136 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2023-08-12 21:47:22,825 DEBUG [main] wire:73 - http-outgoing-0 >> "GET /api/users/581 HTTP/1.1[\r][\n]"
+2023-08-12 21:47:22,825 DEBUG [main] wire:73 - http-outgoing-0 >> "Content-Type: application/json[\r][\n]"
+2023-08-12 21:47:22,826 DEBUG [main] wire:73 - http-outgoing-0 >> "Host: reqres.in[\r][\n]"
+2023-08-12 21:47:22,826 DEBUG [main] wire:73 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2023-08-12 21:47:22,826 DEBUG [main] wire:73 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)[\r][\n]"
+2023-08-12 21:47:22,826 DEBUG [main] wire:73 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2023-08-12 21:47:22,826 DEBUG [main] wire:73 - http-outgoing-0 >> "[\r][\n]"
+2023-08-12 21:47:23,212 DEBUG [main] wire:73 - http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
+2023-08-12 21:47:23,212 DEBUG [main] wire:73 - http-outgoing-0 << "Date: Sat, 12 Aug 2023 13:47:24 GMT[\r][\n]"
+2023-08-12 21:47:23,212 DEBUG [main] wire:73 - http-outgoing-0 << "Content-Type: application/json; charset=utf-8[\r][\n]"
+2023-08-12 21:47:23,212 DEBUG [main] wire:73 - http-outgoing-0 << "Content-Length: 2[\r][\n]"
+2023-08-12 21:47:23,212 DEBUG [main] wire:73 - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2023-08-12 21:47:23,212 DEBUG [main] wire:73 - http-outgoing-0 << "X-Powered-By: Express[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "Access-Control-Allow-Origin: *[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "Etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "Via: 1.1 vegur[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "Cache-Control: max-age=14400[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "CF-Cache-Status: MISS[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=uOcSZQGU1q51FGoSwmshaR9p7A%2B4wp8dLJ4n17ivDRC8wuVtmyYH2iVOvJvAMLIlBfohu%2FwIlk7VfGdXpaJW%2B%2FPJiBcOHNz8YC61Qbeu2KnAh%2Fk9uhttvp9Ijw%3D%3D"}],"group":"cf-nel","max_age":604800}[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "Vary: Accept-Encoding[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "Server: cloudflare[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "CF-RAY: 7f592b80fd9f13e0-KUL[\r][\n]"
+2023-08-12 21:47:23,213 DEBUG [main] wire:73 - http-outgoing-0 << "[\r][\n]"
+2023-08-12 21:47:23,214 DEBUG [main] wire:87 - http-outgoing-0 << "{}"
+2023-08-12 21:47:23,214 DEBUG [main] headers:122 - http-outgoing-0 << HTTP/1.1 404 Not Found
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Date: Sat, 12 Aug 2023 13:47:24 GMT
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Content-Type: application/json; charset=utf-8
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Content-Length: 2
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Connection: keep-alive
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << X-Powered-By: Express
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Access-Control-Allow-Origin: *
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Via: 1.1 vegur
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << Cache-Control: max-age=14400
+2023-08-12 21:47:23,214 DEBUG [main] headers:125 - http-outgoing-0 << CF-Cache-Status: MISS
+2023-08-12 21:47:23,215 DEBUG [main] headers:125 - http-outgoing-0 << Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=uOcSZQGU1q51FGoSwmshaR9p7A%2B4wp8dLJ4n17ivDRC8wuVtmyYH2iVOvJvAMLIlBfohu%2FwIlk7VfGdXpaJW%2B%2FPJiBcOHNz8YC61Qbeu2KnAh%2Fk9uhttvp9Ijw%3D%3D"}],"group":"cf-nel","max_age":604800}
+2023-08-12 21:47:23,215 DEBUG [main] headers:125 - http-outgoing-0 << NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+2023-08-12 21:47:23,215 DEBUG [main] headers:125 - http-outgoing-0 << Vary: Accept-Encoding
+2023-08-12 21:47:23,215 DEBUG [main] headers:125 - http-outgoing-0 << Server: cloudflare
+2023-08-12 21:47:23,215 DEBUG [main] headers:125 - http-outgoing-0 << CF-RAY: 7f592b80fd9f13e0-KUL
+2023-08-12 21:47:23,215 DEBUG [main] MainClientExec:285 - Connection can be kept alive indefinitely
+2023-08-12 21:47:23,217 DEBUG [main] DefaultManagedHttpClientConnection:79 - http-outgoing-0: Close connection
+2023-08-12 21:47:23,218 DEBUG [main] MainClientExec:104 - Connection discarded
+2023-08-12 21:47:23,218 DEBUG [main] PoolingHttpClientConnectionManager:351 - Connection released: [id: 0][route: {s}->https://reqres.in:443][total available: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2023-08-12 21:47:23,218 DEBUG [main] PoolingHttpClientConnectionManager:411 - Connection manager is shutting down
+2023-08-12 21:47:23,218 DEBUG [main] PoolingHttpClientConnectionManager:434 - Connection manager shut down
