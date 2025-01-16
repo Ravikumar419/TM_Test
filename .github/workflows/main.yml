@@ -1,0 +1,26 @@
+name: My CI Workflow
+on:
+  push:
+    branches:
+      - main   # Trigger the workflow on push to the 'main' branch
+  pull_request:
+    branches:
+      - main   # Trigger the workflow on pull requests to the 'main' branch
+
+jobs:
+  build:
+    runs-on: self-hosted   # Specify the self-hosted runner, or use 'ubuntu-latest'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2   # Checkout the code from the repository
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Set up Node.js version (example)
+
+      - name: Install dependencies
+        run: npm install  # Install dependencies (example for Node.js project)
+
+      - name: Run tests
+        run: npm test   # Run tests (example for Node.js project)
