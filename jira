@@ -21,6 +21,52 @@ jsonPayload = "{" & _
     "}" & _
 "}"
 
+
+
+
+
+
+' Required for HTTP requests
+Set http = CreateObject("MSXML2.XMLHTTP")
+
+' Jira API endpoint and authentication details
+url = "https://jira.maybank.com.my/rest/api/2/issue/"
+username = "80012664"
+password = "Etiqa12"
+authHeader = "Basic " & Base64Encode(username & ":" & password)
+
+' Prepare the JSON payload for creating an issue
+jsonPayload = "{""fields"": {" & _
+              """project"": {""key"": ""PROJECT_KEY""}," & _
+              """summary"": ""Automation Defect: Test Case Failure""," & _
+              """description"": ""Description of the defect: Failure observed during test execution.""," & _
+              """issuetype"": {""name"": ""Bug""}," & _
+              """priority"": {""name"": ""High""}" & _
+              "}}"
+
+' Make the POST request
+http.Open "POST", url, False
+http.setRequestHeader "Content-Type", "application/json"
+http.setRequestHeader "Authorization", authHeader
+http.Send jsonPayload
+
+' Handle the response
+If http.Status = 201 Then
+    MsgBox "Defect created successfully! Response: " & http.responseText
+Else
+    MsgBox "Failed to create defect. Status: " & http.Status & " Response: " & http.responseText
+End If
+
+' Function to encode username and password in Base64
+Function Base64Encode(input)
+    Dim xml, node
+    Set xml = CreateObject("MSXML2.DOMDocument.3.0")
+    Set node = xml.createElement("Base64")
+    node.dataType = "bin.base64"
+    node.nodeTypedValue = input
+    Base64Encode = Replace(node.text, vbLf, "")
+End Function
+
 ' Initialize the HTTP object for making the API call
 Set http = CreateObject("MSXML2.XMLHTTP")
 http.Open "POST", jiraURL, False, username, password
