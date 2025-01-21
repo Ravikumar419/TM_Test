@@ -111,3 +111,14 @@ If objHTTP.Status = 201 Then
 Else
     MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText
 End If
+
+
+
+
+
+
+
+The download of the specified resource has failed.
+
+
+Line (15): "objHTTP.Send jsonPayload".
