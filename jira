@@ -122,3 +122,51 @@ The download of the specified resource has failed.
 
 
 Line (15): "objHTTP.Send jsonPayload".
+
+
+
+
+
+Sub GetUserEmail()
+    Dim objHTTP As Object
+    Dim responseText As String
+    Dim userEmail As String
+    Dim jsonResponse As Object
+    
+    ' Create HTTP object
+    Set objHTTP = CreateObject("MSXML2.XMLHTTP")
+    
+    ' Set the HTTP request to GET method
+    objHTTP.Open "GET", "https://jira.maybank.com.my/rest/api/2/myself", False
+
+    ' Set headers
+    objHTTP.setRequestHeader "Authorization", "Basic " & Base64Encode("your-email@example.com:API-TOKEN")
+    
+    ' Send the request
+    objHTTP.Send
+
+    ' Check if the request was successful
+    If objHTTP.Status = 200 Then
+        ' Get the response text
+        responseText = objHTTP.responseText
+        
+        ' Parse the JSON response using a JSON parser
+        Set jsonResponse = JsonConverter.ParseJson(responseText)
+        
+        ' Extract the email field
+        userEmail = jsonResponse("emailAddress")
+        
+        ' Display the email ID
+        MsgBox "User Email: " & userEmail
+    Else
+        MsgBox "Failed to get user data. Status: " & objHTTP.Status
+    End If
+End Sub
+
+' Base64 Encoding Function (for Authorization Header)
+Function Base64Encode(str As String) As String
+    Dim objXML As Object
+    Set objXML = CreateObject("MSXML2.DOMDocument.6.0")
+    Base64Encode = objXML.createElement("base64").nodeTypedValue = str
+    Base64Encode = objXML.documentElement.Text
+End Function
