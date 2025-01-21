@@ -87,45 +87,27 @@ Set http = Nothing
 
 
 
-' Required for HTTP requests
-Set http = CreateObject("MSXML2.XMLHTTP")
 
-' Jira API endpoint and authentication details
-url = "https://jira.maybank.com.my/rest/api/2/issue/"
+
+' Set Jira API URL and credentials
+url = "https://jira.maybank.com.my/rest/api/2/issue"
 username = "80012664"
 password = "Etiqa12"
-authHeader = "Basic " & Base64Encode(username & ":" & password)
 
-' Prepare the JSON payload for creating an issue
-jsonPayload = "{
-    ""fields"": {
-        ""project"": { ""key"": ""PROJECT_KEY"" },
-        ""summary"": ""Automation Defect: Test Case Failure"",
-        ""description"": ""Description of the defect: Failure observed during test execution."",
-        ""issuetype"": { ""name"": ""Bug"" },
-        ""priority"": { ""name"": ""High"" }
-    }
-}"
+' Create the JSON payload for creating a defect
+jsonPayload = "{""fields"": {""project"": {""key"": ""TEST""},""summary"": ""Test Issue"",""description"": ""This is a test"",""issuetype"": {""name"": ""Bug""}}}"
 
-' Make the POST request
-http.Open "POST", url, False
-http.setRequestHeader "Content-Type", "application/json"
-http.setRequestHeader "Authorization", authHeader
-http.Send jsonPayload
+' Set up the HTTP request to send the payload to Jira API
+Set objHTTP = CreateObject("MSXML2.XMLHTTP")
+objHTTP.Open "POST", url, False, username, password
+objHTTP.setRequestHeader "Content-Type", "application/json"
 
-' Handle the response
-If http.Status = 201 Then
-    MsgBox "Defect created successfully! Response: " & http.responseText
+' Send the request with the JSON payload
+objHTTP.Send jsonPayload
+
+' Check the response
+If objHTTP.Status = 201 Then
+    MsgBox "Defect created successfully!"
 Else
-    MsgBox "Failed to create defect. Status: " & http.Status & " Response: " & http.responseText
+    MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText
 End If
-
-' Function to encode username and password in Base64
-Function Base64Encode(input)
-    Dim xml, node
-    Set xml = CreateObject("MSXML2.DOMDocument.3.0")
-    Set node = xml.createElement("Base64")
-    node.dataType = "bin.base64"
-    node.nodeTypedValue = input
-    Base64Encode = Replace(node.text, vbLf, "")
-End Function
