@@ -1,0 +1,38 @@
+' Jira API URL
+jiraURL = "https://jira.maybank.com.my/rest/api/2/issue"
+username = "80012664"
+password = "Etiqa12"
+
+' Defect details
+projectKey = "PROJ" ' Replace with your Jira project key
+issueType = "Bug"   ' Replace with the issue type (e.g., Bug, Task)
+summary = "Sample Defect: Issue created from UFT"
+description = "Steps to reproduce:\n1. Step 1\n2. Step 2\n\nExpected: Expected result\nActual: Actual result"
+priority = "High"    ' Replace with the priority (e.g., Low, Medium, High)
+
+' Prepare JSON payload for the API
+jsonPayload = "{" & _
+    """fields"": {" & _
+        """project"": {""key"": """ & projectKey & """}," & _
+        """summary"": """ & summary & """ ," & _
+        """description"": """ & description & """ ," & _
+        """issuetype"": {""name"": """ & issueType & """}," & _
+        """priority"": {""name"": """ & priority & """}" & _
+    "}" & _
+"}"
+
+' Initialize the HTTP object for making the API call
+Set http = CreateObject("MSXML2.XMLHTTP")
+http.Open "POST", jiraURL, False, username, password
+http.setRequestHeader "Content-Type", "application/json"
+http.Send jsonPayload
+
+' Check the response and display the result
+If http.Status = 201 Then
+    MsgBox "Defect created successfully! Response: " & http.responseText
+Else
+    MsgBox "Failed to create defect. Status: " & http.Status & vbCrLf & http.responseText
+End If
+
+' Release the HTTP object
+Set http = Nothing
