@@ -230,3 +230,47 @@ Else
 End If
 
 
+
+
+
+
+
+
+
+
+
+
+' Set Jira API URL and credentials
+url = "https://jira.maybank.com.my/rest/api/2/myself"
+username = "80012664"  ' Your Jira username
+password = "your_api_token_here"  ' Use the API token instead of password
+
+' Create the HTTP request using ServerXMLHTTP for better SSL handling
+Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP.6.0")
+
+' Bypass SSL verification (not recommended for production)
+objHTTP.setOption 2, 13056 ' Disables SSL certificate checks (NOT RECOMMENDED)
+
+' Encode credentials in Base64
+credentials = username & ":" & password
+Dim xmlBase64
+Set xmlBase64 = CreateObject("MSXML2.DOMDocument.6.0")
+xmlBase64.LoadXML("<Base64>" & credentials & "</Base64>")
+encodedCredentials = xmlBase64.documentElement.text
+
+' Set up the HTTP request
+objHTTP.Open "GET", url, False
+objHTTP.setRequestHeader "Authorization", "Basic " & encodedCredentials
+objHTTP.setRequestHeader "Content-Type", "application/json"
+
+' Send the GET request
+objHTTP.Send
+
+' Print the response regardless of the status code
+MsgBox "HTTP Status: " & objHTTP.Status & vbCrLf & "Response: " & objHTTP.responseText
+
+
+
+
+
+
