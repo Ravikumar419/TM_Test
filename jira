@@ -190,3 +190,43 @@ If objHTTP.Status = 200 Then
 Else
     MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText
 End If
+
+
+
+
+
+
+
+' Set Jira API URL and credentials
+url = "https://jira.maybank.com.my/rest/api/2/myself"
+username = "80012664"
+password = "Etiqa12"
+
+' Create the HTTP request using ServerXMLHTTP for SSL options
+Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP.6.0")
+
+' Bypass SSL verification (not recommended for production)
+objHTTP.setOption 2, 13056 ' Disables SSL certificate checks (NOT RECOMMENDED)
+
+' Set up the HTTP request to send the GET request to Jira API
+objHTTP.Open "GET", url, False, username, password
+objHTTP.setRequestHeader "Content-Type", "application/json"
+
+' Send the GET request
+objHTTP.Send
+
+' Check the response
+If objHTTP.Status = 200 Then
+    ' Parse the response (JSON)
+    Set jsonResponse = JsonConverter.ParseJson(objHTTP.responseText)
+    
+    ' Extract and display the timeZone from the response
+    timeZone = jsonResponse("timeZone")
+    
+    ' Show the timeZone in a message box
+    MsgBox "Your Jira timeZone is: " & timeZone
+Else
+    MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText
+End If
+
+
