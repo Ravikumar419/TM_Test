@@ -1,91 +1,3 @@
-' Jira API URL
-jiraURL = "https://jira.maybank.com.my/rest/api/2/issue"
-username = "80012664"
-password = "Etiqa12"
-
-' Defect details
-projectKey = "PROJ" ' Replace with your Jira project key
-issueType = "Bug"   ' Replace with the issue type (e.g., Bug, Task)
-summary = "Sample Defect: Issue created from UFT"
-description = "Steps to reproduce:\n1. Step 1\n2. Step 2\n\nExpected: Expected result\nActual: Actual result"
-priority = "High"    ' Replace with the priority (e.g., Low, Medium, High)
-
-' Prepare JSON payload for the API
-jsonPayload = "{" & _
-    """fields"": {" & _
-        """project"": {""key"": """ & projectKey & """}," & _
-        """summary"": """ & summary & """ ," & _
-        """description"": """ & description & """ ," & _
-        """issuetype"": {""name"": """ & issueType & """}," & _
-        """priority"": {""name"": """ & priority & """}" & _
-    "}" & _
-"}"
-
-
-
-
-
-
-' Required for HTTP requests
-Set http = CreateObject("MSXML2.XMLHTTP")
-
-' Jira API endpoint and authentication details
-url = "https://jira.maybank.com.my/rest/api/2/issue/"
-username = "80012664"
-password = "Etiqa12"
-authHeader = "Basic " & Base64Encode(username & ":" & password)
-
-' Prepare the JSON payload for creating an issue
-jsonPayload = "{""fields"": {" & _
-              """project"": {""key"": ""PROJECT_KEY""}," & _
-              """summary"": ""Automation Defect: Test Case Failure""," & _
-              """description"": ""Description of the defect: Failure observed during test execution.""," & _
-              """issuetype"": {""name"": ""Bug""}," & _
-              """priority"": {""name"": ""High""}" & _
-              "}}"
-
-' Make the POST request
-http.Open "POST", url, False
-http.setRequestHeader "Content-Type", "application/json"
-http.setRequestHeader "Authorization", authHeader
-http.Send jsonPayload
-
-' Handle the response
-If http.Status = 201 Then
-    MsgBox "Defect created successfully! Response: " & http.responseText
-Else
-    MsgBox "Failed to create defect. Status: " & http.Status & " Response: " & http.responseText
-End If
-
-' Function to encode username and password in Base64
-Function Base64Encode(input)
-    Dim xml, node
-    Set xml = CreateObject("MSXML2.DOMDocument.3.0")
-    Set node = xml.createElement("Base64")
-    node.dataType = "bin.base64"
-    node.nodeTypedValue = input
-    Base64Encode = Replace(node.text, vbLf, "")
-End Function
-
-' Initialize the HTTP object for making the API call
-Set http = CreateObject("MSXML2.XMLHTTP")
-http.Open "POST", jiraURL, False, username, password
-http.setRequestHeader "Content-Type", "application/json"
-http.Send jsonPayload
-
-' Check the response and display the result
-If http.Status = 201 Then
-    MsgBox "Defect created successfully! Response: " & http.responseText
-Else
-    MsgBox "Failed to create defect. Status: " & http.Status & vbCrLf & http.responseText
-End If
-
-' Release the HTTP object
-Set http = Nothing
-
-
-
-
 
 
 
@@ -273,4 +185,62 @@ MsgBox "HTTP Status: " & objHTTP.Status & vbCrLf & "Response: " & objHTTP.respon
 
 
 
+
+
+
+
+
+' Set Jira API URL and Personal Access Token
+url = "https://jira.maybank.com.my/rest/api/2/issue"
+username = "80012664"
+accessToken = "your_personal_access_token"
+
+' Create the JSON payload for creating a defect
+jsonPayload = "{""fields"": {""project"": {""key"": ""TEST""},""summary"": ""Test Issue"",""description"": ""This is a test"",""issuetype"": {""name"": ""Bug""}}}"
+
+' Create the HTTP request using ServerXMLHTTP to handle SSL options
+Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP.6.0")
+
+' Open the HTTP request and set headers
+objHTTP.Open "POST", url, False, username, accessToken
+objHTTP.setRequestHeader "Content-Type", "application/json"
+objHTTP.setRequestHeader "Authorization", "Basic " & Base64Encode(username & ":" & accessToken)
+
+' Bypass SSL verification (not recommended for production)
+objHTTP.setOption 2, 13056 ' Disables SSL certificate checks
+
+' Send the request with the JSON payload
+objHTTP.Send jsonPayload
+
+' Check the response
+If objHTTP.Status = 201 Then
+    MsgBox "Defect created successfully!"
+Else
+    MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText & vbCrLf & "Response: " & objHTTP.responseText
+End If
+
+' Function to encode credentials in Base64
+Function Base64Encode(value)
+    Dim objXML, objNode
+    Set objXML = CreateObject("MSXML2.DOMDocument")
+    Set objNode = objXML.createElement("Base64Data")
+    objNode.DataType = "bin.base64"
+    objNode.nodeTypedValue = Stream_StringToBytes(value)
+    Base64Encode = objNode.text
+End Function
+
+' Function to convert a string to bytes
+Function Stream_StringToBytes(value)
+    Dim objStream
+    Set objStream = CreateObject("ADODB.Stream")
+    objStream.Type = 2 ' Text
+    objStream.Mode = 3 ' Read/Write
+    objStream.Open
+    objStream.WriteText value
+    objStream.Position = 0
+    objStream.Type = 1 ' Binary
+    Stream_StringToBytes = objStream.Read
+    objStream.Close
+    Set objStream = Nothing
+End Function
 
