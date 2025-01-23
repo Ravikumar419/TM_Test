@@ -244,3 +244,65 @@ Function Stream_StringToBytes(value)
     Set objStream = Nothing
 End Function
 
+
+
+
+
+
+
+
+
+
+' Set Jira API URL and Personal Access Token
+url = "https://jira.maybank.com.my/rest/api/2/issue"
+username = "80012664"
+accessToken = "your_personal_access_token"
+
+' Create the JSON payload for creating a defect
+jsonPayload = "{""fields"": {""project"": {""key"": ""TEST""},""summary"": ""Test Issue"",""description"": ""This is a test"",""issuetype"": {""name"": ""Bug""}}}"
+
+' Create the HTTP request using ServerXMLHTTP to handle SSL options
+Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP.6.0")
+
+' Open the HTTP request and set headers
+objHTTP.Open "POST", url, False, username, accessToken
+objHTTP.setRequestHeader "Content-Type", "application/json"
+objHTTP.setRequestHeader "Authorization", "Basic " & Base64Encode(username & ":" & accessToken)
+
+' Bypass SSL verification (not recommended for production)
+objHTTP.setOption 2, 13056 ' Disables SSL certificate checks
+
+' Send the request with the JSON payload
+objHTTP.Send jsonPayload
+
+' Check the response
+If objHTTP.Status = 201 Then
+    MsgBox "Defect created successfully!"
+Else
+    MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText & vbCrLf & "Response: " & objHTTP.responseText
+End If
+
+' Function to encode credentials in Base64
+Function Base64Encode(value)
+    Dim objXML, objNode
+    Set objXML = CreateObject("MSXML2.DOMDocument")
+    Set objNode = objXML.createElement("Base64Data")
+    objNode.DataType = "bin.base64"
+    objNode.nodeTypedValue = Stream_StringToBytes(value)
+    Base64Encode = objNode.text
+End Function
+
+' Function to convert a string to bytes
+Function Stream_StringToBytes(value)
+    Dim objStream
+    Set objStream = CreateObject("ADODB.Stream")
+    objStream.Type = 2 ' Text
+    objStream.Mode = 3 ' Read/Write
+    objStream.Open
+    objStream.WriteText value
+    objStream.Position = 0
+    objStream.Type = 1 ' Binary
+    Stream_StringToBytes = objStream.Read
+    objStream.Close
+    Set objStream = Nothing
+End Function
