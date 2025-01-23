@@ -37,71 +37,40 @@ Line (15): "objHTTP.Send jsonPayload".
 
 
 
-
 ' Set Jira API URL and credentials
 url = "https://jira.maybank.com.my/rest/api/2/myself"
-username = "80012664"
-password = "Etiqa12"
+username = "80012664"  ' Your Jira username
+password = "your_password_here"  ' Your Jira password
 
-' Set up the HTTP request to send the GET request to Jira API
-Set objHTTP = CreateObject("MSXML2.XMLHTTP")
-objHTTP.Open "GET", url, False, username, password
-objHTTP.setRequestHeader "Content-Type", "application/json"
-
-' Send the GET request
-objHTTP.Send
-
-' Check the response
-If objHTTP.Status = 200 Then
-    ' Parse the response (JSON)
-    Set jsonResponse = JsonConverter.ParseJson(objHTTP.responseText)
-    
-    ' Extract and display the timeZone from the response
-    timeZone = jsonResponse("timeZone")
-    
-    ' Show the timeZone in a message box
-    MsgBox "Your Jira timeZone is: " & timeZone
-Else
-    MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText
-End If
-
-
-
-
-
-
-
-' Set Jira API URL and credentials
-url = "https://jira.maybank.com.my/rest/api/2/myself"
-username = "80012664"
-password = "Etiqa12"
-
-' Create the HTTP request
-Set objHTTP = CreateObject("MSXML2.XMLHTTP")
+' Create the HTTP request using ServerXMLHTTP for better SSL handling
+Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP.6.0")
 
 ' Bypass SSL verification (not recommended for production)
-objHTTP.setOption 2, 13056 ' Disables SSL verification (NOT RECOMMENDED)
+objHTTP.setOption 2, 13056 ' Disables SSL certificate checks (NOT RECOMMENDED)
 
-' Set up the HTTP request to send the GET request to Jira API
-objHTTP.Open "GET", url, False, username, password
+' Encode credentials in Base64
+credentials = username & ":" & password
+Dim xmlBase64
+Set xmlBase64 = CreateObject("MSXML2.DOMDocument.6.0")
+xmlBase64.LoadXML("<Base64>" & credentials & "</Base64>")
+encodedCredentials = xmlBase64.documentElement.text
+
+' Set up the HTTP request
+objHTTP.Open "GET", url, False
+objHTTP.setRequestHeader "Authorization", "Basic " & encodedCredentials
 objHTTP.setRequestHeader "Content-Type", "application/json"
 
 ' Send the GET request
 objHTTP.Send
 
-' Check the response
-If objHTTP.Status = 200 Then
-    ' Parse the response (JSON)
-    Set jsonResponse = JsonConverter.ParseJson(objHTTP.responseText)
-    
-    ' Extract and display the timeZone from the response
-    timeZone = jsonResponse("timeZone")
-    
-    ' Show the timeZone in a message box
-    MsgBox "Your Jira timeZone is: " & timeZone
-Else
-    MsgBox "Error: " & objHTTP.Status & " " & objHTTP.StatusText
-End If
+' Print the response regardless of the status code
+MsgBox "HTTP Status: " & objHTTP.Status & vbCrLf & "Response: " & objHTTP.responseText
+
+
+
+
+
+
 
 
 
