@@ -1,0 +1,83 @@
+# ETQ-Ease-Automation
+
+## Description
+This repository contains the automation test scripts for ETQ's Ease application using Katalon Studio for iOS and UFT for web.
+
+## Prerequisites
+- [Katalon Studio](https://www.katalon.com/) (for iOS app automation)
+- [Micro Focus UFT](https://www.microfocus.com/en-us/products/unified-functional-testing) (for web automation)
+- Any other dependencies or software you need to install
+
+## Setup Instructions
+1. Clone the repository:
+    ```
+    git clone https://github.com/yourusername/ETQ-Ease-Automation-Katalon.git
+    ```
+2. Install the required tools (Katalon Studio, UFT, etc.).
+
+3. Open the test scripts in the respective tools.
+
+## How to Run Tests
+- For Katalon (iOS):
+    1. Open Katalon Studio and load the test scripts.
+    2. Run the tests from the test suite.
+    
+- For UFT (Web):
+    1. Open UFT and load the test scripts.
+    2. Run the tests from the test suite.
+
+## Folder Structure
+- `KatalonTests/` - Contains the Katalon scripts for iOS app automation.
+- `UFTTests/` - Contains the UFT scripts for web automation.
+
+## Contributing
+Feel free to fork the repository, make changes, and submit pull requests.
+
+## License
+MIT (or your chosen license)
+
+
+
+
+
+
+
+name: Katalon Test Automation
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  schedule:
+    - cron: '0 0 * * *'  # Schedule for daily runs at midnight (UTC)
+
+jobs:
+  run-katalon-tests:
+    runs-on: ubuntu-latest  # Using GitHub-hosted runner with Ubuntu
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2  # Checkout code to the runner
+
+      - name: Set up Java
+        uses: actions/setup-java@v2  # Set up Java for Katalon execution
+        with:
+          java-version: '11'  # Set your required Java version
+
+      - name: Install Katalon Studio
+        run: |
+          wget https://download.katalon.com/ -O katalon.zip  # Adjust URL for correct download link
+          unzip katalon.zip -d katalon
+          chmod +x katalon/katalon
+
+      - name: Run Katalon Tests
+        run: |
+          katalon/katalon -noSplash -runMode=console -projectPath=$(pwd)/<path-to-your-project>/KatalonStudio.prj -testSuitePath="Test Suites/YourTestSuite" -browserType="Chrome"
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: katalon-test-results
+          path: $(pwd)/<path-to-results-directory>
+
+
