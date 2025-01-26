@@ -131,3 +131,50 @@ jobs:
         with:
           name: UFT-Test-Results
           path: <path-to-results>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+name: UFT Automation Workflow
+
+on:
+  push:  # Trigger on any push to the repository
+    branches:
+      - main  # Specify the branch to monitor for pushes (e.g., "main")
+  schedule:  # Schedule to run the workflow at specific intervals
+    - cron: "0 0 * * *"  # Runs daily at midnight (UTC)
+
+jobs:
+  run-uft-scripts:
+    runs-on: windows-latest  # UFT requires Windows runners
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up the environment (e.g., install required dependencies)
+      - name: Install Dependencies
+        run: |
+          echo "Setting up environment for UFT..."
+
+      # Step 3: Run UFT automation scripts
+      - name: Run UFT Automation Scripts
+        run: |
+          echo "Starting UFT automation scripts..."
+          # Replace with the actual command to execute UFT scripts
+          # Example: Invoke UFT via command-line or ALM (if applicable)
+          C:\path\to\uft\script\runner.exe /path/to/script
+
