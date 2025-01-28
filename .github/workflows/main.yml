@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted   # Specify the self-hosted runner, or use 'ubuntu-latest'
+    runs-on: self-hosted, LAPTOP-TIQBN4TK   # Specify the self-hosted runner, or use 'ubuntu-latest'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2   # Checkout the code from the repository
